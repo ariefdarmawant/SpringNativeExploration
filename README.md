@@ -1,0 +1,2 @@
+This repository contains code of a simple backend service built using Spring Boot. 
+We will be using this code as an example of how to make a spring native apps of an already existing spring application.
