@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:10.4.13
+    volumes:
+      - $HOME/data/mysql:/var/lib/mysql:rw,Z
+    env_file:
+      - db-secret.env
+    ports:
+      - 3306:3306
+    networks:
+      - apps
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9000:80
+    networks:
+      - apps
+
+networks: 
+  apps:
+    driver: bridge
